@@ -1,0 +1,29 @@
+Algorithm:
+Step 1: Check a daemon class
+Step 2: Checking whether the thread is Daemon or not
+Step 3: Setting User thread t1 to daemon
+Step 4: Starting first 2 threads
+Step 5: Setting User threads t3 to Daemon
+Step 6:end
+
+Program:
+
+public class TestDaemonThread1 extends Thread{
+public void run(){
+if(Thread.currentThread().isDaemon()){
+System.out.println("Daemon Thread Works");
+}
+else{
+System.out.println("User Thread works");
+}
+}
+public static void main(String args[]){
+TestDaemonThread1 t1=new TestDaemonThread1();
+TestDaemonThread1 t2=new TestDaemonThread1();
+TestDaemonThread1 t3=new TestDaemonThread1();
+t1.setDaemon(true);
+t1.start();
+t2.start();
+t3.start();
+}
+}
